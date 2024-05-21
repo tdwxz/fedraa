@@ -61,8 +61,6 @@ part_array = {
 
 
 if __name__ == '__main__':
-    config = configparser.ConfigParser()
-    config.read('./config/config_ram_fed.ini', encoding='utf-8')
     args.device = torch.device('cuda:{}'.format(args.gpu) if torch.cuda.is_available() and args.gpu != -1 else 'cpu')
 
     file_name = f'MyRamFed_{args.num_users}_{args.client_cmp}_{args.model}_{args.dataset}_{args.iid}_{float_to_str(args.alpha)}_{args.part_array}_{float_to_str(args.lr)}_{args.K}_{args.getK}_{args.select_submodel_type}'
